@@ -9,7 +9,7 @@ public class ConsultaEstudantes {
     static Scanner scanner = new Scanner(System.in);
 
     public static void exibeInterface(){
-        String formato = "%1$-2s %2$-25s %3$-15s %4$-12s %5-10S$%n";
+        String formato = "%1$-2s %2$-25s %3$-15s %4$-12s %5$-10s%n";
 
         System.out.println("\nConsulta de Estudantes: ");
         System.out.printf(formato, "ID", " | Nome", " | Sexo", " | PCD", " | IRA");

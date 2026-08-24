@@ -6,19 +6,21 @@
              version="2.2">
     <persistence-unit name="EstudantePU">
         <properties>
-            <property name="javax.persistence.jdbc.url"
+            <property name="jakarta.persistence.jdbc.url"
                       value="jdbc:mysql://localhost/EstudantePU?createDatabaseIfNotExist=true&amp;useTimezone=true&amp;serverTimezone=UTC" />
-            <property name="javax.persistence.jdbc.driver"
+            <property name="jakarta.persistence.jdbc.driver"
                       value="com.mysql.cj.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.user" value="estudante1" />
-            <property name="javax.persistence.jdbc.password" value="estudante1" />
+            <property name="jakarta.persistence.jdbc.user" value="root" />
+            <property name="jakarta.persistence.jdbc.password" value="estudante1" />
+            <property name="jakarta.persistence.schema-generation.database.action"
+                      value="update"/>
          <!--   <property name="javax.persistence.sql-load-script-source"
                       value="META-INF/dadosIniciais.sql" /> -->
             <property name="hibernate.dialect"
                       value="org.hibernate.dialect.MySQL8Dialect" />
          <!--   <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" /> -->
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
 </persistence>

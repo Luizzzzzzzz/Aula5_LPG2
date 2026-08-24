@@ -18,6 +18,11 @@ public class ConsultaEstudantePorId {
 
         Estudante estudante = new EstudanteController().consultaEstudantePorId(id);
 
-        System.out.printf(formato );
+        System.out.printf(formato, "ID", " | Nome", " | Sexo", " | PCD", " | IRA");
+        System.out.printf(formato, estudante.getId(),
+                            " | "+estudante.getNome(),
+                            " | "+estudante.getSexo(),
+                            " | "+(estudante.isPCD() ? "Sim" : "Não"),
+                            " | "+estudante.getIRA()+"\n");
     }
 }

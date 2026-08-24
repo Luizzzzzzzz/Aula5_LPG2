@@ -6,6 +6,7 @@ import jakarta.persistence.Query;
 import org.example.Model.Estudante;
 import org.example.persistence.JpaUtil;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class EstudanteController {
@@ -29,7 +30,7 @@ public class EstudanteController {
 
     @SuppressWarnings("unchecked")
     public List<Estudante> consultaEstudantes() {
-        Query query = manager.createQuery("select 1 from Estudante 1");
+        Query query = manager.createQuery("select e from Estudante e");
         List<Estudante> estudantes = query.getResultList();
         return estudantes;
     }
@@ -37,5 +38,28 @@ public class EstudanteController {
     public Estudante consultaEstudantePorId(Long id) {
         Estudante estudante = manager.find(Estudante.class, id);
         return estudante;
+    }
+
+    public void alteraEstudante(Long id, String nome, Character sexo, Boolean PCD, BigDecimal IRA){
+        transaction.begin();
+        Estudante estudante = manager.find(Estudante.class, id);
+
+        estudante.setNome(nome);
+        estudante.setSexo(sexo);
+        estudante.setPCD(PCD);
+        estudante.setIRA(IRA);
+        transaction.commit();
+    }
+
+    public void excluiEstudante(Long id){
+        transaction.begin();
+        Estudante estudante = manager.find(Estudante.class, id);
+        manager.remove(estudante);
+        transaction.commit();
+    }
+
+    public void finalizaEntityManager(){
+        manager.close();
+        JpaUtil.close();
     }
 }

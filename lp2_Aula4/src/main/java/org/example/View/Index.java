@@ -1,5 +1,7 @@
 package org.example.View;
 
+import org.example.Controller.EstudanteController;
+
 import java.util.Scanner;
 
 public class Index {
@@ -30,16 +32,16 @@ public class Index {
                 	ConsultaEstudantePorId.exibeInterface();
                     break;
                 case 4:
-                	AlteraLivro.exibeInterface();
+                	AlteraEstudante.exibeInterface();
                     break;
                 case 5:
-                	ExcluiLivro.exibeInterface();
+                	ExcluiEstudante.exibeInterface();
                     break;
                 default:
                     if (opcao != 0)
                         System.out.println("Digite uma opção válida.");
                     else {
-                    	new LivroController().finalizaEntityManager();
+                    	new EstudanteController().finalizaEntityManager();
                     	System.out.println("Programa encerrado.");
                     }
                     break;
