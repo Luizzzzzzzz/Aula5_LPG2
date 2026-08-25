@@ -33,7 +33,7 @@ public class ConsultaEstudantes {
             System.out.println("1) Alterar");
             System.out.println("2) Excluir");
             System.out.println("0) Voltar");
-            System.out.println("Digite uma opção. ");
+            System.out.print("Digite uma opção: ");
 
             opcao = Integer.parseInt(scanner.nextLine());
             System.out.println();
@@ -49,7 +49,7 @@ public class ConsultaEstudantes {
                     break;
                 default:
                     if (opcao != 1 && opcao != 2)
-                        System.out.println("Digite uma Opção Válida. ");
+                        System.out.print("Digite uma Opção Válida. ");
             }
 
         } while (opcao != 0 && opcao != 1 && opcao != 2);

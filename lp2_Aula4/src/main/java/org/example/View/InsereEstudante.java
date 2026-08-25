@@ -16,7 +16,7 @@ public class InsereEstudante {
         System.out.println("Nome: ");
         nome = scanner.nextLine();
         System.out.println("Sexo (F ou M): ");
-        sexo = scanner.next().charAt(0);
+        sexo = scanner.nextLine().charAt(0);
         System.out.println("Possui necessidade especial? (sim ou não): ");
         PCD = scanner.nextLine().equalsIgnoreCase("sim");
 

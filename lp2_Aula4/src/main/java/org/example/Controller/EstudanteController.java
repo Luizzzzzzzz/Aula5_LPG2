@@ -28,7 +28,7 @@ public class EstudanteController {
         transaction.commit();
     }
 
-    @SuppressWarnings("unchecked")
+
     public List<Estudante> consultaEstudantes() {
         Query query = manager.createQuery("select e from Estudante e");
         List<Estudante> estudantes = query.getResultList();
